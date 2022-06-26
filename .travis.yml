@@ -5,7 +5,7 @@ services:
 
 script:
   - cd webapp/
-  - docker-compose build
+  - docker build webapp/frontend
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
@@ -19,9 +19,6 @@ deploy:
   bucket_name: elasticbeanstalk-us-east-1-434405741460
   bucket_path: Webapp
   on : 
-       repo: dreommani/webapp
-       branches:
-       only:
-       - master
+       branch: main
   acces_key_id: $AWS_ACCESS_KEY
   secret_acces_key: $AWS_SECRET_KEY
