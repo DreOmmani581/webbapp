@@ -1,0 +1,16 @@
+sudo: required
+
+services:
+  - docker 
+
+before_install:
+  - docker build -t dreommani/webapp .
+
+script:
+  - docker run  dreommani/webapp npm test
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push dreommani/webapp
+
+
