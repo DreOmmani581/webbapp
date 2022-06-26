@@ -1,0 +1,11 @@
+celery==5.2.6
+emails==0.6
+fastapi==0.77.1
+jose==1.0.0
+passlib==1.7.4
+pydantic==1.9.0
+pytest==6.2.1
+raven==6.10.0
+SQLAlchemy==1.4.36
+starlette==0.19.1
+tenacity==8.0.1

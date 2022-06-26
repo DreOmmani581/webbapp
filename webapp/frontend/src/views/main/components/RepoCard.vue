@@ -1,0 +1,56 @@
+<template>
+  <article :class="$props.classStyle ? 'list' : 'card'" @click="$emit('selected', repoName)">
+    <h2>{{ repoName }}</h2>
+    <p>{{ language }}</p>
+    <p>{{ starCount }}</p>
+    
+  </article>
+</template>
+
+<script>
+export default {
+  name: 'RepoCard',
+  props: {
+    classStyle: Boolean,
+    repoName: String,
+    repoDescription: String,
+    language: String,
+    starCount: Number,
+    forkCount: Number,
+    dateCreated: String,
+  },
+};
+</script>
+
+<style scoped>
+  article.card {
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    cursor: pointer;
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 1px #d0d0d0;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p:first-of-type, p:last-of-type {
+    font-weight: bold;
+    overflow-wrap: break-word;
+  }
+
+  span {
+    display: inline-block;
+    margin-right: 2em;
+  }
+
+  /* styles for list class */
+  article.list {
+    border-bottom: 1px solid #d0d0d0;
+    text-align: left;
+  }
+</style>
