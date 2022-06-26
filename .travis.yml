@@ -14,26 +14,26 @@ after_success:
   - docker tag celeryworker dreommani/celeryworker
   - docker push dreommani/celeryworker
 
-  - docker tag traefik:v2.2 dreommani/traefik:v2.2
-  - docker push dreommani/traefik:v2.2
+  - docker tag traefik dreommani/traefik
+  - docker push dreommani/traefik
 
-  - docker tag postgres:12 dreommani/postgres:12
-  - docker push dreommani/postgres:12
+  - docker tag postgres dreommani/postgres
+  - docker push dreommani/postgres
 
   - docker tag dpage/pgadmin4 dreommani/dpage/pgadmin4
   - docker push dreommani/dpage/pgadmin4
 
-  - docker tag rabbitmq:3 dreommani/rabbitmq:3
-  - docker push dreommani/rabbitmq:3
+  - docker tag rabbitmq dreommani/rabbitmq
+  - docker push dreommani/rabbitmq
 
-  - docker tag mher/flower:0.9.7 dreommani/mher/flower:0.9.7
-  - docker push dreommani/mher/flower:0.9.7
+  - docker tag mher/flower dreommani/mher/flower
+  - docker push dreommani/mher/flower
 
   - docker tag frontend dreommani/frontend
-  - docker push dreommani/dpage/frontend
+  - docker push dreommani/frontend
 
-  - docker tag dpage/pgadmin4 dreommani/dpage/pgadmin4
-  - docker push dreommani/dpage/pgadmin4
+  - docker tag pgadmin4 dreommani/pgadmin4
+  - docker push dreommani/pgadmin4
 
 deploy:
   provider : elasticbeanstalk
