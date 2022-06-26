@@ -11,4 +11,13 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push dreommani/webapp
 
-
+deploy:
+  provider : elasticbeanstalk
+  region: us-east-1
+  app: Webapp
+  env: Webapp-env
+  bucket_name: elasticbeanstalk-us-east-1-434405741460
+  bucket_path: Webapp
+  on : branch: master
+       acces_key_id: $AWS_ACCESS_KEY
+       secret_acces_key: $AWS_SECRET_KEY
