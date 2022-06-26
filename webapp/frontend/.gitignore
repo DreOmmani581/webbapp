@@ -21,7 +21,6 @@ yarn-error.log*
 *.sln
 *.sw*
 frontend/node_modules
-package.json
 package-lock.json
 .editorconfig
 node_modules
