@@ -5,7 +5,7 @@ services:
 
 script:
   - cd webapp/
-  - docker build webapp/frontend
+  - docker build frontend
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
