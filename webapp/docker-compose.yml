@@ -171,7 +171,7 @@ services:
   celeryworker:
     image: '${DOCKER_IMAGE_CELERYWORKER?Variable not set}:${TAG-latest}'
     depends_on:
-      - db
+      - db  
       - queue
     env_file:
       - .env

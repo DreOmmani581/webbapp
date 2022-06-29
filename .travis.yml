@@ -5,36 +5,23 @@ services:
 
 script:
   - cd webapp/
-  - docker-compose build 
+<<<<<<< HEAD
+  - docker-compose build .
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push dreommani/webapp
+=======
+  - docker-compose build frontend
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-
-  - docker tag celeryworker dreommani/celeryworker
-  - docker push dreommani/celeryworker
-
-  - docker tag traefik dreommani/traefik
-  - docker push dreommani/traefik
-
-  - docker tag postgres dreommani/postgres
-  - docker push dreommani/postgres
-
-  - docker tag dpage/pgadmin4 dreommani/dpage/pgadmin4
-  - docker push dreommani/dpage/pgadmin4
-
-  - docker tag rabbitmq dreommani/rabbitmq
-  - docker push dreommani/rabbitmq
-
-  - docker tag mher/flower dreommani/mher/flower
-  - docker push dreommani/mher/flower
-
   - docker tag frontend dreommani/frontend
   - docker push dreommani/frontend
 
-  - docker tag pgadmin4 dreommani/pgadmin4
-  - docker push dreommani/pgadmin4
 
+>>>>>>> 7ce04fd8ee0fb47c1eff6c1b604f81dc152a82d0
 deploy:
   provider : elasticbeanstalk
   region: us-east-1
